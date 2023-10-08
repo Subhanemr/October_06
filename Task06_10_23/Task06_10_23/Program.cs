@@ -120,34 +120,41 @@ namespace Task06_10_23
                 }
             }
 
-                //Task 5
+            //Task 5
 
-                //int[] array1 = new int[5];
-                //int[] array2 = new int[5];
-                //for (int i = 0; i < array1.Length; i++)
-                //{
-                //    int j = 1;
-                //    Console.WriteLine($"1-ci Arraye {j}-ci Eded Daxil edin: ");
-                //    array1[i] = int.Parse(Console.ReadLine());
-                //    j++;
-                //}
+            //restart:
+            //Console.WriteLine("Arraylerin uzunlugunu yazin");
+            //int h = int.Parse(Console.ReadLine());
+            //if(h < 0)
+            //{
+            //    goto restart;
+            //}
+            //int[] array1 = new int[h];
+            //int[] array2 = new int[h];
+            //for (int i = 0; i < array1.Length; i++)
+            //{
+            //    int j = 1;
+            //    Console.WriteLine($"1-ci Arraye {j}-ci Eded Daxil edin: ");
+            //    array1[i] = int.Parse(Console.ReadLine());
+            //    j++;
+            //}
 
-                //for (int i = 0; i < array2.Length; i++)
-                //{
-                //    int j = 1;
-                //    Console.WriteLine($"2-ci Arraye {j}-ci Eded Daxil edin: ");
-                //    array2[i] = int.Parse(Console.ReadLine());
-                //    j++;
-                //}
+            //for (int i = 0; i < array2.Length; i++)
+            //{
+            //    int j = 1;
+            //    Console.WriteLine($"2-ci Arraye {j}-ci Eded Daxil edin: ");
+            //    array2[i] = int.Parse(Console.ReadLine());
+            //    j++;
+            //}
 
-                //DisplayArray(array1, "Array 1:");
-                //DisplayArray(array2, "Array 2:");
+            //DisplayArray(array1, "Array 1:");
+            //DisplayArray(array2, "Array 2:");
 
-                //int sum = AddArrays(array1, array2);
+            //int[] result = AddArrays(array1, array2);
 
-                //Console.WriteLine("1-ci massiv və 2-ci massivlərin cəmi: " + sum);
+            //DisplayArray(result, " Iki arrayin cemi");
 
-            }
+        }
 
 
 
@@ -165,7 +172,7 @@ namespace Task06_10_23
 
         //Task 5
 
-        //public static int AddArrays(int[] array1, int[] array2)
+        //public static int[] AddArrays(int[] array1, int[] array2)
         //{
         //    int sum = 0;
         //    int[] result = new int[array1.Length];
@@ -174,12 +181,8 @@ namespace Task06_10_23
         //    {
         //        result[i] = array1[i] + array2[i];
         //    }
-        //    for (int i = 0; i < result.Length; i++)
-        //    {
-        //        sum += result[i];
-        //    }
 
-        //    return sum;
+        //    return result;
         //}
 
         //public static void DisplayArray(int[] array, string message)
