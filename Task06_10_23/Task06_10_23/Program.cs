@@ -58,67 +58,65 @@ namespace Task06_10_23
 
             //Task 3 
 
-            //string inputText = "Bu, numune daxiletme metnidir ve biz ondan sozler toplamaq isteyirik.";
-            //string[] words = CollectWords(inputText);
-
-            //Console.WriteLine("Words in the input text:");
-            //foreach (string word in words)
-            //{
-            //    Console.WriteLine(word);
-            //}
+            Console.WriteLine("Metni daxil edin");
+            string sampleString = Console.ReadLine();
+            string[] words = CustomSplit(sampleString);
+            foreach (string word in words)
+            {
+                Console.WriteLine(word);
+            }
 
 
             //Task 4
+            //Console.WriteLine("Metni daxil edin");
+            //string sampleString = Console.ReadLine();
+            //while (true)
+            //{
+            //    Console.WriteLine();
+            //    string[] words = CustomSplit(sampleString);
+            //    Console.WriteLine("Original String: \"" + sampleString + "\"");
+            //    Console.WriteLine("Seciminizi edin:");
+            //    Console.WriteLine("[1] CustomTrimStart:");
+            //    Console.WriteLine("[2] CustomTrim:");
+            //    Console.WriteLine("[3] CustomTrimEnd:");
+            //    int choice = int.Parse(Console.ReadLine());
+            //    if (choice > 3 && choice < 0)
+            //    {
+            //        break;
+            //    }
 
-            string sampleString = "    Hello, World!    ";
-            string[] delimiters = { " " };
-            while (true)
-            {
-                Console.WriteLine();
-                string[] words = sampleString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-                Console.WriteLine("Original String: \"" + sampleString + "\"");
-                Console.WriteLine("Seciminizi edin:");
-                Console.WriteLine("[1] CustomTrimStart:");
-                Console.WriteLine("[2] CustomTrim:");
-                Console.WriteLine("[3] CustomTrimEnd:");
-                int choice = int.Parse(Console.ReadLine());
-                if (choice > 3 && choice < 0)
-                {
-                    break;
-                }
-
-                switch (choice)
-                {
-                    case 1:
-                        {
-                            string[] trimmedStart = CustomTrimStart(words);
-                            foreach (string word in trimmedStart)
-                            {
-                                Console.Write($"'{word}'");
-                            }
-                            break;
-                        }
-                    case 2:
-                        {
-                            foreach (string word in words)
-                            {
-                                Console.Write($"'{word}'");
-                            }
-                            break;
-                        }
-                    case 3:
-                        {
-                            string[] trimmedEnd = CustomTrimEnd(words);
-                            foreach (string word in trimmedEnd)
-                            {
-                                Console.Write($"'{word}'");
-                            }
-                            break;
-                        }
+            //    switch (choice)
+            //    {
+            //        case 1:
+            //            {
+            //                string[] trimmedStart = CustomTrimStart(words);
+            //                foreach (string word in trimmedStart)
+            //                {
+            //                    Console.Write($"'{word}'");
+            //                }
+            //                break;
+            //            }
+            //        case 2:
+            //            {
+            //                foreach (string word in words)
+            //                {
+            //                    Console.Write($"'{word}'");
+            //                }
+            //                break;
+            //            }
+            //        case 3:
+            //            {
+            //                string[] trimmedEnd = CustomTrimEnd(words);
+            //                foreach (string word in trimmedEnd)
+            //                {
+            //                    Console.Write($"'{word}'");
+            //                }
+            //                break;
+            //            }
 
 
-                }
-            }
+            //    }
+            //}
 
             //Task 5
 
@@ -198,7 +196,44 @@ namespace Task06_10_23
         //    Console.WriteLine();
         //}
 
-        //Task 4
+        //Task 3 ve Tas 4 metodu 
+
+        static string[] CustomSplit(string sampleString)
+        {
+            int count = 1; 
+            restart:
+            if (sampleString.Length <= 0)
+            {
+                Console.WriteLine("Hec ne daxil edilmeyib");
+                goto restart;
+            }
+
+            for (int i = 0; i < sampleString.Length; i++)
+            {
+                if (sampleString[i] == ' ')
+                {
+                    count++;
+                }
+            }
+            string[] arr = new string[count];
+            string word = "";
+            int index = 0;
+            for (int i = 0; i < sampleString.Length; i++)
+            {
+                if (sampleString[i] == ' ')
+                {
+                    arr[index] = word;
+                    index++;
+                    word = "";
+                }
+                else
+                {
+                    word += sampleString[i];
+                }
+
+            }
+            return arr;
+        }
 
         static string[] CustomTrimStart(string[] input)
         {
