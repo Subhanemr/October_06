@@ -154,20 +154,6 @@ namespace Task06_10_23
 
         }
 
-
-
-        //Task 3
-
-        //public static string[] CollectWords(string inputText)
-        //{
-
-        //    string[] delimiters = { " ", ",", ".", "!", "?", ";", ":", "-", "\n", "\r", "\t" };
-        //    string[] words = inputText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-
-        //    return words;
-        //}
-
-
         //Task 5
 
         //public static int[] AddArrays(int[] array1, int[] array2)
